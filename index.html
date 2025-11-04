@@ -217,6 +217,11 @@
             align-items: center;
         }
 
+        .logo img {
+      height: 40px;
+      width: auto;
+    }
+
         .logo-icon {
             font-size: 2.2rem;
             color: var(--primary);
@@ -352,7 +357,61 @@
         .mobile-menu a:hover {
             color: var(--primary);
         }
+ /* Mobile Navigation */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 10px;
+    }
 
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 320px;
+      height: 100vh;
+      background: var(--primary);
+      padding: 100px 30px;
+      transition: var(--transition);
+      z-index: 1000;
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+    }
+
+    .mobile-nav a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition);
+    }
+
+    .mobile-nav a:hover {
+      color: var(--accent);
+      padding-left: 10px;
+    }
         /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.9)), 
@@ -731,6 +790,10 @@
             color: var(--white);
             padding: 80px 0 30px;
         }
+         .footer-logo img {
+      height: 50px;
+      margin-bottom: 1.5rem;
+    }
 
         .footer-content {
             display: grid;
@@ -826,29 +889,24 @@
                 order: -1;
             }
             
-            .contact-info {
-                text-align: center;
-            }
-            
-            .contact-details {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 30px;
-            }
-            
-            .contact-item {
-                flex: 0 0 calc(50% - 30px);
-                justify-content: center;
-                text-align: center;
-                flex-direction: column;
-            }
-            
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
+             /* Responsive Styles */
+    @media (max-width: 992px) {
+      .about-content,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        order: -1;
+      }
+      
+      .contact-info {
+        padding-right: 0;
+        margin-bottom: 3rem;
+     
+      }
+    }
+
 
         @media (max-width: 768px) {
             .nav-desktop {
@@ -937,34 +995,7 @@
             .service-card {
                 padding: 30px 20px;
             }
-            .logo-img {
-    /* Default size for desktop */
-    height: 60px; /* Recommended height */
-    width: auto; /* Maintains aspect ratio */
-    transition: var(--transition);
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-    .logo-img {
-        height: 50px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 45px;
-    }
-}
-
-/* Small mobile */
-@media (max-width: 480px) {
-    .logo-img {
-        height: 40px;
-    }
-}
-        }
+            
     </style>
 </head>
 <body>
@@ -972,7 +1003,7 @@
       <div class="container header-container">
         <!-- Logo as Image -->
         <div class="logo">
-            <img src="images/Logo-.jpeg" alt="Pakamisa Towing Logo" class="logo-img"style="max-width: 200px; height: 60px;">
+            <img src="images/Logo-.jpeg" alt="Pakamisa Towing Logo" class="logo-img"style="height: 100px; width: 100px;">
         </div>
             
             <!-- Desktop Navigation -->
@@ -1202,11 +1233,7 @@
                 <p>Available 24/7 to assist with all your towing and recovery needs.</p>
             </div>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Reach out for immediate assistance or general inquiries. Our team of dynamic professionals is ready to help.</p>
-                    
+            
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">
@@ -1239,7 +1266,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 
                 <div class="contact-form">
                     <form id="contactForm">
@@ -1288,7 +1314,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                     <img src="images/Logo-.jpeg" alt="Pakamisa Towing Logo" class="logo-img"style="max-width: 200px; height: 60px;">
+                     <img src="images/Logo-.jpeg" alt="Pakamisa Towing Logo" class="logo-img"style="height:100px; weight: 100px;">
                     <p>Professional towing and recovery services committed to quality, safety, and economic empowerment across South Africa.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -1327,8 +1353,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Pakamisa Towing (Pty) Ltd. All rights reserved. | Committed to economic development and black empowerment.</p>
-            </div>
+                <p>&copy; 2023 Pakamisa Towing (Pty) Ltd. All rights reserved.</p>
         </div>
     </footer>
 
