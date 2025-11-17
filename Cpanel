@@ -1,4 +1,6 @@
+# .cpanel.yml
+---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/pakamisaco/public_html/
-    - /bin/cp -r * $DEPLOYPATH
+tasks:
+-export DEPLOY_DIR=public_html
+-/bin/cp -R * $DEPLOY
